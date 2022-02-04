@@ -6,6 +6,8 @@ package com.dop.application;
 import java.util.Scanner;
 
 import com.dop.bean.User;
+import com.dop.business.AuthorizationOperation;
+import com.dop.business.AuthorizationOperationInterface;
 import com.dop.business.UserOperation;
 import com.dop.business.UserOperationInterface;
 
@@ -33,8 +35,6 @@ public class DOPApplication {
 
 			choice = sc.nextInt();
 			
-			UserOperationInterface userOperation = new UserOperation();
-
 			switch (choice) {
 			case 1:
 				User user = new User();
@@ -50,6 +50,7 @@ public class DOPApplication {
 				System.out.println("Enter Email");
 				String email = sc.next();
 				user.setEmail(email);
+				UserOperationInterface userOperation = new UserOperation();
 				userOperation.registerUser(user);
 				break;
 			case 2:
@@ -57,9 +58,20 @@ public class DOPApplication {
 				int id = sc.nextInt();
 				System.out.println("Enter Password");
 				String pass = sc.next();
+				AuthorizationOperationInterface authorizationOperation = new AuthorizationOperation();
+				int new_id = authorizationOperation.authorizeUser(id, pass);
+				if(new_id != -1) {
+					System.out.println("User logged in as " + new_id);
+					DOPUserMenu dopusermenu = new DOPUserMenu(new_id);
+					dopusermenu.UserMenu();
+				}
+				else
+					System.out.println("Invalid UserID or Password");
 				break;
 			case 3:
 				System.out.println("Exiting !");
+				sc.close();
+				System.exit(0) ;
 				break;
 			default:
 				System.out.println("Invalid Choice");

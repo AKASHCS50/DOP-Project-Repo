@@ -14,7 +14,7 @@ import com.dop.bean.User;
  *
  */
 public class UserOperation implements UserOperationInterface {
-	@Override
+
 	public void registerUser(User user) {
 
 		UserDaoOperationInterface userDaoOperation = new UserDaoOperation();

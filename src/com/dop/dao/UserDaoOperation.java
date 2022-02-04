@@ -57,6 +57,8 @@ public class UserDaoOperation implements UserDaoOperationInterface {
 		    try{
 		    	if(i==0) 
 		    		throw new ErrorInRegisteringStudentException();
+		    	else
+		    		System.out.println("User successfully created with UserID " + user.getUserId());
 		    }catch(ErrorInRegisteringStudentException e){
 		    	System.out.println(e.getMessage());
 		    }
