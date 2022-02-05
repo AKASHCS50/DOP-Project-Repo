@@ -11,9 +11,11 @@ import com.dop.dao.AuthorizeDaoOperationInterface;
  *
  */
 public class AuthorizationOperation implements AuthorizationOperationInterface {
+
+	AuthorizeDaoOperationInterface authorizeDaoOperation = new AuthorizeDaoOperation();
+
 	public int authorizeUser(int userID, String password) {
-		
-		AuthorizeDaoOperationInterface authorizeDaoOperation = new AuthorizeDaoOperation();
+
 		return authorizeDaoOperation.authorizeUser(userID, password);
 	}
 }

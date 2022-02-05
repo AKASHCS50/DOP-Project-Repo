@@ -7,10 +7,10 @@ package com.dop.exceptions;
  * @author asus
  *
  */
-public class ErrorInRegisteringStudentException extends Exception {
+public class ErrorInDeletingPostException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	public String getMessage() {
-		return "Error in Registering student";
+		return "Error in Deleting post";
 	}
 }

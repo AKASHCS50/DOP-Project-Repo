@@ -10,12 +10,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import org.apache.log4j.Logger;
 
 /**
  * @author asus
  *
  */
 public class DBUtils {
+	private static Logger logger = Logger.getLogger(DBUtils.class);
+
 	public Connection connectionEstablish() {
 
 		/**
@@ -29,19 +32,20 @@ public class DBUtils {
 			Properties prop = new Properties();
 			InputStream inputStream = DBUtils.class.getClassLoader().getResourceAsStream("./config.properties");
 			prop.load(inputStream);
+			@SuppressWarnings("unused")
 			String driver = prop.getProperty("driver");
 			String url = prop.getProperty("url");
 			String user = prop.getProperty("user");
 			String password = prop.getProperty("password");
 			connection = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		} catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		}
-		System.out.println("Database Connection Established.");
+		logger.info("Database Connection Established");
 		return connection;
 	}
 
@@ -51,21 +55,21 @@ public class DBUtils {
 	public void connectionClose(Connection conn) {
 
 		try {
-
 			conn.close();
-			System.out.println("Database Connection Closed.");
+			logger.info("Database Connection Closed");
 		} catch (SQLException se) {
-			System.out.println(se.getMessage());
+			logger.error(se.getMessage());
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		} finally {
 			try {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException se) {
-				System.out.println(se.getMessage());
+				logger.error(se.getMessage());
 			}
 		}
 
 	}
+
 }

@@ -1,0 +1,30 @@
+15:12:51,854  INFO AuthorizeDaoOperation,main:31 - Here
+15:33:10,707  INFO DBUtils,main:48 - Database Connection Established
+15:33:10,738  INFO DBUtils,main:59 - Database Connection Closed
+15:33:10,791  INFO DBUtils,main:48 - Database Connection Established
+15:33:10,802  INFO UserDaoOperation,main:66 - User successfully created with UserID 21
+15:33:10,804  INFO DBUtils,main:59 - Database Connection Closed
+15:33:29,601  INFO DBUtils,main:48 - Database Connection Established
+15:33:29,618  INFO DBUtils,main:59 - Database Connection Closed
+15:34:00,571  INFO DBUtils,main:48 - Database Connection Established
+15:34:00,576  INFO PostDaoOperation,main:36 - PostID : 1  Author : 501  Title : abc  Content : ada
+15:34:00,577  INFO PostDaoOperation,main:36 - PostID : 2  Author : 501  Title : ada  Content : adad
+15:34:00,577  INFO PostDaoOperation,main:36 - PostID : 3  Author : 501  Title : Post3  Content : This
+15:34:00,578  INFO PostDaoOperation,main:36 - PostID : 4  Author : 205  Title : d  Content : 
+15:34:00,578  INFO PostDaoOperation,main:36 - PostID : 5  Author : 501  Title : ada  Content : ada adad fmoerf
+15:34:00,578  INFO PostDaoOperation,main:36 - PostID : 6  Author : 501  Title : ada fsf  Content : lhn i n9 onnwdw[kkwmfk
+15:34:00,580  INFO DBUtils,main:59 - Database Connection Closed
+15:34:15,230  INFO DBUtils,main:48 - Database Connection Established
+15:34:15,257  INFO DBUtils,main:59 - Database Connection Closed
+15:34:31,088  INFO DBUtils,main:48 - Database Connection Established
+15:34:31,098  INFO PostDaoOperation,main:61 - Post successfully created with PostID 8
+15:34:31,100  INFO DBUtils,main:59 - Database Connection Closed
+15:34:42,192  INFO DBUtils,main:48 - Database Connection Established
+15:34:42,209  INFO PostDaoOperation,main:97 - Post successfully deletd with PostID 8
+15:34:42,212  INFO DBUtils,main:59 - Database Connection Closed
+15:45:31,321  INFO DBUtils,main:48 - Database Connection Established
+15:45:31,354  INFO DBUtils,main:59 - Database Connection Closed
+15:46:29,071  INFO DBUtils,main:48 - Database Connection Established
+15:46:29,112  INFO DBUtils,main:59 - Database Connection Closed
+15:47:03,118  INFO DBUtils,main:48 - Database Connection Established
+15:47:03,149  INFO DBUtils,main:59 - Database Connection Closed

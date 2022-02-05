@@ -11,4 +11,5 @@ import com.dop.bean.User;
  */
 public interface UserOperationInterface {
 		public void registerUser(User user);
+		public void changePassword(int userId, String newp, String newc);
 }

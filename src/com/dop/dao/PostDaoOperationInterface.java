@@ -10,6 +10,7 @@ import com.dop.bean.Post;
  *
  */
 public interface PostDaoOperationInterface {
+	public void showPost();
 	public void addPost(Post post);
-	public void deletePost(int postId);
+	public void deletePost(int userId, int postId);
 }

@@ -14,15 +14,20 @@ import com.dop.dao.PostDaoOperationInterface;
 public class PostOperation implements PostOperationInterface {
 
 	PostDaoOperationInterface postDaoOperation = new PostDaoOperation();
-	
+
+	public void showPost() {
+		// TODO Auto-generated method stub
+		postDaoOperation.showPost();
+	}
+
 	public void addPost(Post post) {
 		// TODO Auto-generated method stub
 		postDaoOperation.addPost(post);
 	}
 
-	public void deletePost(int postId) {
+	public void deletePost(int userId, int postId) {
 		// TODO Auto-generated method stub
-		postDaoOperation.deletePost(postId);
+		postDaoOperation.deletePost(userId, postId);
 	}
 
 }

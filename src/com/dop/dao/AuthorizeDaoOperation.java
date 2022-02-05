@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.dop.constants.SQLQueryConstant;
 import com.dop.utils.DBUtils;
 
@@ -16,25 +18,27 @@ import com.dop.utils.DBUtils;
  *
  */
 public class AuthorizeDaoOperation implements AuthorizeDaoOperationInterface {
+
+	private static Logger logger = Logger.getLogger(AuthorizeDaoOperation.class);
+
 	public int authorizeUser(int userID, String password) {
 		DBUtils DBUtils = new DBUtils();
-	    Connection conn = DBUtils.connectionEstablish();
+		Connection conn = DBUtils.connectionEstablish();
 		try {
-		    PreparedStatement stmt=conn.prepareStatement(SQLQueryConstant.GET_USER_DETAIL);
+			PreparedStatement stmt = conn.prepareStatement(SQLQueryConstant.GET_USER_DETAIL);
 			stmt.setInt(1, userID);
-			ResultSet rs = stmt.executeQuery(); 
-			
+			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				if (rs.getInt("userId")==userID && rs.getString("password").equals(password)) {
+				if (rs.getInt("userId") == userID && rs.getString("password").equals(password)) {
 					return userID;
 				}
 			}
 			return -1;
 		} catch (SQLException e) {
-		    System.out.println("Exception raised: "+e.getMessage());
-		    return -1;
+			logger.debug("Exception raised: " + e.getMessage());
+			return -1;
 		} finally {
-			DBUtils.connectionClose(conn);	
+			DBUtils.connectionClose(conn);
 		}
 	}
 }
